@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: springBootPsql
+    restart: always
+    environment:
+      - 'POSTGRES_DB=clientDB'
+      - 'POSTGRES_PASSWORD=client'
+      - 'POSTGRES_USER=client'
+    ports:
+      - 5432:5432
+    volumes:
+        - data:/var/lib/postgresql/data
+volumes:
+  data:
